@@ -14,7 +14,7 @@ symfony new symfony7-blog
 
 ### 3. Install Symfony Twig
 `shell
-composer require twig/twig
+composer require symfony/twig-bundle
 `
 
 ### 4. Start the Server
