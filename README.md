@@ -7,32 +7,30 @@
 brew install symfony-cli/tap/symfony-cli
 `
 
-### 2. Create a Symfony Project
-`shell
-symfony new symfony7-blog
-`
-
-### 3. Install Symfony Twig
+### 2. Install Symfony Twig
 `shell
 composer require symfony/twig-bundle
 `
 
-### 4. Install Symfony/maker-bundle
+### 3. Install Symfony/maker-bundle
 `shell
 composer require symfony/maker-bundle --dev
 `
 
-### 5. Start the Server
+### 4. Install Symfony/orm-pack
 `shell
-symfony serve
+composer require symfony/orm-pack
 `
-
-### 6. Open the page on browser
-http://127.0.0.1:8000/
 
 
 
 ## B. Project Development
+### 0. Create the Project
+   - Create a symfony project:   `symfony new project_name`
+   - Open the project:           `cd project_name && code .`
+   - Start the server:           `symfony serve`
+   - Open the page on browser: 'http://127.0.0.1:8000/'
+
 ### 1. Create HomeController (src/controller/)
    - Define the namespace (App\Controller)
    - Include necessary Symfony Components (Response, Route, etc.)
@@ -44,4 +42,6 @@ http://127.0.0.1:8000/
    - Create index.html.twig
    - Include base.html.twig
    - Wrap in body block
+
+
 
