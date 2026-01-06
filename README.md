@@ -17,19 +17,31 @@ symfony new symfony7-blog
 composer require symfony/twig-bundle
 `
 
-### 4. Start the Server
+### 4. Install Symfony/maker-bundle
+`shell
+composer require symfony/maker-bundle --dev
+`
+
+### 5. Start the Server
 `shell
 symfony serve
 `
 
-### 5. Open the page on browser
+### 6. Open the page on browser
 http://127.0.0.1:8000/
 
 
 
 ## B. Project Development
-### 1. Create HomeController (src/controller)
+### 1. Create HomeController (src/controller/)
    - Define the namespace (App\Controller)
    - Include necessary Symfony Components (Response, Route, etc.)
    - Create an index function
    - Return the output with response
+
+### 2. Create index.html  (src/templates/)
+   - Create home directory
+   - Create index.html.twig
+   - Include base.html.twig
+   - Wrap in body block
+
