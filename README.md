@@ -12,12 +12,12 @@ brew install symfony-cli/tap/symfony-cli
 composer require symfony/twig-bundle
 `
 
-### 3. Install Symfony/maker-bundle
+### 3. Install Symfony Maker
 `shell
 composer require symfony/maker-bundle --dev
 `
 
-### 4. Install Symfony/orm-pack
+### 4. Install Symfony Doctrine
 `shell
 composer require symfony/orm-pack
 `
