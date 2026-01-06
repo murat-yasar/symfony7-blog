@@ -12,12 +12,17 @@ brew install symfony-cli/tap/symfony-cli
 symfony new symfony7-blog
 `
 
-### 3. Start the Server
+### 3. Install Symfony Twig
+`shell
+composer require twig/twig
+`
+
+### 4. Start the Server
 `shell
 symfony serve
 `
 
-### 4. Open the page on browser
+### 5. Open the page on browser
 http://127.0.0.1:8000/
 
 
