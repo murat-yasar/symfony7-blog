@@ -20,8 +20,13 @@ class Post
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\Column]
-    private ?\DateTime $date = null;
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    private ?\DateTimeImmutable $date = null;
+
+    public function __construct()
+    {
+        $this->date = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -36,7 +41,6 @@ class Post
     public function setTitle(string $title): static
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -48,19 +52,17 @@ class Post
     public function setContent(string $content): static
     {
         $this->content = $content;
-
         return $this;
     }
 
-    public function getDatetime(): ?\DateTime
+    public function getDatetime(): ?\DateTimeImmutable
     {
         return $this->date;
     }
 
-    public function setDatetime(\DateTime $date): static
+    public function setDatetime(\DateTimeImmutable $date): static
     {
         $this->date = $date;
-
         return $this;
     }
 }

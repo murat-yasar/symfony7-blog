@@ -56,6 +56,8 @@ composer require orm-fixtures --dev
    - Add tables to the entity: title (string), text, datetime
    - Create the migration code: `php bin/console make:migration`
    - Migrate the tables `php bin/console doctrine:migrations:migrate`
+   - Create test objects using orm-fixtures (src/DataFixtures/AppFixtures.php)
+   - Write test objects into DB: `php bin/console doctrine:fixtures:load`
 
 ### 4. Create
    -
