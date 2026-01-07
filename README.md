@@ -17,9 +17,14 @@ composer require symfony/twig-bundle
 composer require symfony/maker-bundle --dev
 `
 
-### 4. Install Symfony Doctrine
+### 4. Install Symfony Doctrine (for DB manipulation)
 `shell
 composer require symfony/orm-pack
+`
+
+### 4. Install ORM-fixtures (for DB testing)
+`shell
+composer require orm-fixtures --dev
 `
 
 
