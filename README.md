@@ -43,8 +43,14 @@ composer require symfony/orm-pack
    - Include base.html.twig
    - Wrap in body block
 
-### 3. Create DB
+### 3. Create DB (posts)
    - Change .env file for DB
-   - Create DB: `php bin/console doctrine:database:create`
-   - Check db file in var directory
+   - Create DB (posts): `php bin/console doctrine:database:create`
+   - Check db file in var directory and src/Entity
+   - Create entity (post): `php bin/console make:entity entity_name`
+   - Add tables to the entity: title (string), text, datetime
+   - Create the migration code: `php bin/console make:migration`
+   - Migrate the tables `php bin/console doctrine:migrations:migrate`
 
+### 4. Create
+   -
