@@ -43,5 +43,8 @@ composer require symfony/orm-pack
    - Include base.html.twig
    - Wrap in body block
 
-
+### 3. Create DB
+   - Change .env file for DB
+   - Create DB: `php bin/console doctrine:database:create`
+   - Check db file in var directory
 
