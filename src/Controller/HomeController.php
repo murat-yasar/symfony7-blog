@@ -11,7 +11,8 @@ use Symfony\Component\Routing\Attribute\Route;     // Include Route component fo
 class HomeController extends AbstractController
 {
 
-   #[Route('/')]     // Define route path
+   // #[Route('/')]     // Define route path
+   #[Route('/', name: 'home_index')]
 
    // Create function index
    public function index (): Response
