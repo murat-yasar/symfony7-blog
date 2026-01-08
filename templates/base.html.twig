@@ -12,8 +12,33 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
+        {# NAVIGATION #}
+        <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
+            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1">
+                <nav>
+                    <ul class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
+                    <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('home_index') }}">Home</a></li>
+                    <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('post_index') }}">Posts</a></li>
+                    {# <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('about_index') }}">About</a></li> #}
+                    </ul>
+                </nav>
+            </div>
+            <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4"></div>
+        </div>
 
-        {% endblock %}
+        {# PAGE CONTENT #}
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        {# FOOTER #}
+        <footer class="mx-auto mt-32 w-full max-w-container px-4 sm:px-6 lg:px-8" aria-labelledby="footer-heading">
+            <div class="items-centers grid grid-cols-1 justify-between gap-4 border-t border-gray-100 py-6">
+                <p class="text-sm/6 text-gray-600 text-center">
+                    © 2026 <a href="https://github.com/murat-yasar" target="_blank">Murat Yaşar</a>. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
     </body>
 </html>
