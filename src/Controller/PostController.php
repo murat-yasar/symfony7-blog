@@ -12,14 +12,12 @@ final class PostController extends AbstractController
     #[Route('/posts', name: 'post_index')]
     public function index(PostRepository $repository): Response
     {
-        // Find all the data from DB
-        $posts = $repository->findAll();
-
-        // dump($posts);    // for debugging
-        dd($posts);     // for debugging (debug and die)
+        // Display data for debugging
+        // $posts = $repository->findAll();
+        // dump($posts);    // Alt: dd($posts);     // for debugging (debug and die)
 
         return $this->render('post/index.html.twig', [
-            'controller_name' => 'PostController',
+            'posts' => $repository->findAll(),
         ]);
     }
 }

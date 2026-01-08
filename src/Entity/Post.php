@@ -55,12 +55,12 @@ class Post
         return $this;
     }
 
-    public function getDatetime(): ?\DateTimeImmutable
+    public function getDate(): ?\DateTimeImmutable
     {
         return $this->date;
     }
 
-    public function setDatetime(\DateTimeImmutable $date): static
+    public function setDate(\DateTimeImmutable $date): static
     {
         $this->date = $date;
         return $this;
