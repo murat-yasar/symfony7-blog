@@ -58,6 +58,7 @@ composer require orm-fixtures --dev
    - Migrate the tables `php bin/console doctrine:migrations:migrate`
    - Create test objects using orm-fixtures (src/DataFixtures/AppFixtures.php)
    - Write test objects into DB: `php bin/console doctrine:fixtures:load`
+   - Check DB: `php bin/console dbal:run-sql "SELECT * FROM post"`
+   - Display the data in frontend (src/Controller/PostController.php)
+   - Check the data in frontend (dump, or dd methods)
 
-### 4. Create
-   -
