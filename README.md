@@ -1,4 +1,4 @@
-# A Simple Web-blog which is created with Symfony7
+# A Simple Web-blog which is created with Symfony 7.4
 
 
 ## A. Project Setup
@@ -26,6 +26,13 @@ composer require symfony/orm-pack
 `shell
 composer require orm-fixtures --dev
 `
+
+### 4. Install Symfony Profiler (for development)
+`shell
+composer require symfony/profiler-pack --dev
+`
+
+
 
 
 
@@ -62,3 +69,7 @@ composer require orm-fixtures --dev
    - Display the data in frontend (src/Controller/PostController.php)
    - Check the data in frontend (dump, or dd methods)
 
+### 4. Add Navigation and Footer
+   - Connect TailwindCSS with CDN (templates/base.html.twig)
+   - Add a Navigation with home and posts links before {% body %} block
+   - Add a Footer after {% body %} block
