@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PostRepository;
 
+use App\Entity\Post;
+
 final class PostController extends AbstractController
 {
     #[Route('/posts', name: 'post_index')]
@@ -21,17 +23,23 @@ final class PostController extends AbstractController
         ]);
     }
 
-    #[Route('/post/{id<\d+>}')]
-    public function show($id, PostRepository $repository): Response
+    #[Route('/post/{id<\d+>}', 'post_show')]
+    // public function show($id, PostRepository $repository): Response
+    // {
+    //     // $post = $repository->find($id);                        // Search by primary key
+    //     $post = $repository->findOneBy(['id' => $id]);  // Search by any criteria
+
+    //     if($post === null)
+    //     {
+    //         throw $this->createNotFoundException('Post not found');
+    //     }
+
+    //     return $this->render('post/show.html.twig', ['post' => $post]);
+    // }
+
+    // Alt Approach (Do not forget to use App\Entitiy\Post class)
+    public function show(Post $post): Response
     {
-        // $post = $repository->find($id);                        // Search by primary key
-        $post = $repository->findOneBy(['id' => $id]);  // Search by any criteria
-
-        if($post === null)
-        {
-            throw $this->createNotFoundException('Post not found');
-        }
-
         return $this->render('post/show.html.twig', ['post' => $post]);
     }
 }
