@@ -24,7 +24,13 @@ final class PostController extends AbstractController
     #[Route('/post/{id<\d+>}')]
     public function show($id, PostRepository $repository): Response
     {
-        $post = $repository->findOneBy(['id' => $id]);
+        // $post = $repository->find($id);                        // Search by primary key
+        $post = $repository->findOneBy(['id' => $id]);  // Search by any criteria
+
+        if($post === null)
+        {
+            throw $this->createNotFoundException('Post not found');
+        }
 
         return $this->render('post/show.html.twig', ['post' => $post]);
     }
