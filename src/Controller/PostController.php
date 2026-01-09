@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PostRepository;
-
 use App\Entity\Post;
+use App\Form\PostType;
 
 final class PostController extends AbstractController
 {
@@ -49,6 +49,9 @@ final class PostController extends AbstractController
     #[Route(path: '/post/new', name: 'post_new')]
     public function new(): Response
     {
-        return $this->render('post/new.html.twig');
+        $form = $this->createForm(PostType::class);
+        return $this->render('post/new.html.twig', [
+            'form' => $form,
+        ]);
     }
 }

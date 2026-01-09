@@ -1,7 +1,25 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'tailwind_2_layout.html.twig' %}
 
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1 class="m-5 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">Create a new Post</h1>
+    <h1 class="m-5 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">
+        Create a new Post
+    </h1>
+
+    <section class="m-5 max-w-2xl">
+        <div class="bg-white border border-gray-300 rounded-lg shadow-sm p-6">
+            {{ form_start(form) }}
+
+                {{ form_row(form.title) }}
+                {{ form_row(form.content) }}
+
+                <div class="mt-6 flex justify-end">
+                    {{ form_widget(form.save) }}
+                </div>
+
+            {{ form_end(form) }}
+        </div>
+    </section>
 {% endblock %}

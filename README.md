@@ -86,6 +86,7 @@ composer require symfony/form
 
 ### 6. Add New component
    - Install symfony/form
+   - Create form logic: `php bin/console make:form`
    - Define New function to create a new post (PostController.php)
    - Define Route to New function (PostController.php)
    - Define New twig ((templates/post/new.html.twig)
