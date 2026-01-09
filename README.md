@@ -32,6 +32,11 @@ composer require orm-fixtures --dev
 composer require symfony/profiler-pack --dev
 `
 
+### 5. Install Symfony Form (to create forms)
+`shell
+composer require symfony/form
+`
+
 
 
 
@@ -73,3 +78,14 @@ composer require symfony/profiler-pack --dev
    - Connect TailwindCSS with CDN (templates/base.html.twig)
    - Add a Navigation with home and posts links before {% body %} block
    - Add a Footer after {% body %} block
+
+### 5. Add Show component
+   - Define Show function to display a single post (PostController.php)
+   - Define Route to Show function (PostController.php)
+   - Define Show twig ((templates/post/show.html.twig)
+
+### 6. Add New component
+   - Install symfony/form
+   - Define New function to create a new post (PostController.php)
+   - Define Route to New function (PostController.php)
+   - Define New twig ((templates/post/new.html.twig)

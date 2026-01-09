@@ -11,7 +11,8 @@ use App\Entity\Post;
 
 final class PostController extends AbstractController
 {
-    #[Route('/posts', name: 'post_index')]
+    // List the posts
+    #[Route(path: '/posts', name: 'post_index')]
     public function index(PostRepository $repository): Response
     {
         // Display data for debugging
@@ -23,7 +24,8 @@ final class PostController extends AbstractController
         ]);
     }
 
-    #[Route('/post/{id<\d+>}', 'post_show')]
+    // Show a post
+    #[Route(path: '/post/{id<\d+>}', name: 'post_show')]
     // public function show($id, PostRepository $repository): Response
     // {
     //     // $post = $repository->find($id);                        // Search by primary key
@@ -41,5 +43,12 @@ final class PostController extends AbstractController
     public function show(Post $post): Response
     {
         return $this->render('post/show.html.twig', ['post' => $post]);
+    }
+
+    // Create a new post
+    #[Route(path: '/post/new', name: 'post_new')]
+    public function new(): Response
+    {
+        return $this->render('post/new.html.twig');
     }
 }
