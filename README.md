@@ -1,4 +1,11 @@
 # A Simple Web-blog which is created with Symfony 7.4
+It's a simple blog site with CRUD operations. During the development phase, I used packages for forms, validation, DB access, tests, Twig templating, CLI tools, etc.
+I developed the app by using the following technologgies:
+- PHP 8.3
+- Symfony 7.4
+- MySQL 8.0 -> PHPmyadmin
+- Apache Server
+- MAMP
 
 
 ## A. Project Setup
@@ -41,8 +48,6 @@ composer require symfony/form
 `shell
 composer require symfony/validator
 `
-
-
 
 
 
@@ -110,3 +115,6 @@ composer require symfony/validator
    - Create delete function (src/Controller/PostController.php)
    - Create delete twig (templates/post/delete.html.twig)
    - Add delete button and reference the link (templates/post/show.html.twig)
+
+### 9. Style Twig components
+   - Use TailwindCSS to style frontend
