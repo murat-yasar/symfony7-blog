@@ -65,7 +65,7 @@ final class PostController extends AbstractController
             // Display a success message
             $this->addFlash(
                 'notice',
-                'The post has been created successfully'
+                'The post has been successfully created!'
             );
 
             return $this->redirectToRoute('post_show', [
@@ -93,7 +93,7 @@ final class PostController extends AbstractController
             // Display a success message
             $this->addFlash(
                 'notice',
-                'The post has been updated successfully'
+                'The post has been successfully updated!'
             );
 
             return $this->redirectToRoute('post_show', [
@@ -103,6 +103,28 @@ final class PostController extends AbstractController
 
         return $this->render('post/edit.html.twig', [
             'form' => $form,
+        ]);
+    }
+
+    #[Route(path: '/post/{id<\d+>}/delete', name: 'post_delete')]
+    public function delete(Post $post, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        if ($request->isMethod('POST'))
+        {
+            $entityManager->remove($post);
+
+            $entityManager->flush();
+
+            // Display a success message
+            $this->addFlash(
+                'notice',
+                'The post has been successfully deleted!'
+            );
+
+            return $this->redirectToRoute('post_index');
+        }
+        return $this->render('post/delete.html.twig', [
+            'id' => $post->getId(),
         ]);
     }
 }

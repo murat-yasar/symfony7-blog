@@ -87,7 +87,7 @@ composer require symfony/validator
 ### 5. Add Show component
    - Define Show function to display a single post (PostController.php)
    - Define Route to Show function (PostController.php)
-   - Define Show twig ((templates/post/show.html.twig)
+   - Define Show twig (templates/post/show.html.twig)
 
 ### 6. Add New component
    - Install symfony/form
@@ -99,9 +99,14 @@ composer require symfony/validator
    - Create a success message for form submission (templates/base.html.twig)
    - Define the message in PostController (src/Controller/PostController.php)
 
-### 6. Add Edit component
+### 7. Add Edit component
    - Create a _form.html.twig component for common forms (new and edit, etc.)
    - Remove the form from new.html.twig and refer the _form.html.twig, instead
-   - Create edit.html.twig
-   - Add an edit function (src/Controller/PostController.php)
-   - Add an edit button and reference the link (templates/post/show.html.twig)
+   - Create edit function (src/Controller/PostController.php)
+   - Create edit twig (templates/post/edit.html.twig)
+   - Add edit button and reference the link (templates/post/show.html.twig)
+
+### 8. Add Delete component
+   - Create delete function (src/Controller/PostController.php)
+   - Create delete twig (templates/post/delete.html.twig)
+   - Add delete button and reference the link (templates/post/show.html.twig)

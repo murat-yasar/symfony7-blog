@@ -15,22 +15,22 @@
     <body>
         {# NAVIGATION #}
         <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
-            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1">
+            <div class="sm:flex sm:items-center sm:w-auto w-full order-3 sm:order-1">
                 <nav>
-                    <ul class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
+                    <ul class="sm:flex items-center justify-between text-base text-blue-600 pt-4 sm:pt-0">
                     <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('home_index') }}">Home</a></li>
                     <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('post_index') }}">Posts</a></li>
                     <li><a class="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="{{ path('post_new') }}">New Post</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4"></div>
+            <div class="order-2 sm:order-3 flex flex-wrap items-center justify-end mr-0 sm:mr-4"></div>
         </div>
 
         {# FLASH MESSAGES #}
         {% for message in app.flashes('notice') %}
             <div class="flex justify-center">
-                <div class="font-regular relative block w-full max-w-screen-md rounded-lg bg-green-500 px-4 py-4 text-base text-white" data-dismissible="alert">
+                <div class="font-regular relative block w-full max-w-screen-sm rounded-lg bg-green-500 px-4 py-4 text-base text-white" data-dismissible="alert">
                     <div class="absolute top-4 left-4">
                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" aria-hidden="true" class="mt-px h-6 w-6">
                             <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd"></path>
@@ -45,7 +45,7 @@
         {% endfor %}
 
         {# PAGE CONTENT #}
-        <main>
+        <main class="justify-items-center">
             {% block body %}{% endblock %}
         </main>
 

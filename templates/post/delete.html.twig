@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+   Delete Post
+{% endblock %}
+
+{% block body %}
+	<h1 class="m-5 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">
+      Delete the Post
+	</h1>
+
+
+   <section class="m-6 max-w-2xl">
+      <div class="m-6 pt-6 text-2xl flex justify-center">
+         <p>Are you sure to delete this Post?</p>
+      </div>
+
+      <form method="POST">
+         <div class="m-6 flex justify-between bg-white border border-gray-300 rounded-lg shadow-sm p-6">
+            <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-md transition">DELETE</button>
+            <a href="{{ path('post_show', {'id': id}) }}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition">CANCEL</a>
+         </div>
+      </form>
+   </section>
+
+{% endblock %}
