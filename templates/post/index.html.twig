@@ -5,22 +5,24 @@
 {% block body %}
     <h1 class="m-5 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">Posts</h1>
 
-    <table class="w-full m-5 text-left table-auto min-w-max">
-        <thead>
-            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Title</th>
-            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Content</th>
-            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Date</th>
-        </thead>
-        <tbody>
-            {% for post in posts %}
-                <tr>
-                    <td class="p-4 border-b border-slate-200">
-                        <a class="underline text-blue-600" href="{{ path('post_show', {'id' : post.id }) }}">{{ post.title }}</a>
-                    </td>
-                    <td class="p-4 border-b border-slate-200">{{ post.content }}</td>
-                    <td class="p-4 border-b border-slate-200">{{ post.date|date('Y-m-d H:i') }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="border border-gray-300 rounded-lg justify-items-center">
+        <table class="w-full m-5 text-left table-auto min-w-max">
+            <thead>
+                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Title</th>
+                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Content</th>
+                <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Date</th>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    <tr>
+                        <td class="p-4 border-b border-slate-200">
+                            <a class="underline text-blue-600" href="{{ path('post_show', {'id' : post.id }) }}">{{ post.title }}</a>
+                        </td>
+                        <td class="p-4 border-b border-slate-200 max-w-md truncate">{{ post.content }}</td>
+                        <td class="p-4 border-b border-slate-200">{{ post.date|date('Y-m-d H:i') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
