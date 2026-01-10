@@ -62,6 +62,12 @@ final class PostController extends AbstractController
             $entityManager->persist($post);
             $entityManager->flush();
 
+            // Display a success message
+            $this->addFlash(
+                'notice',
+                'The post has been created successfully'
+            );
+
             return $this->redirectToRoute('post_show', [
                 'id' => $post->getId()
             ]);
