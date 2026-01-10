@@ -1,0 +1,14 @@
+<section class="m-5 max-w-2xl">
+   <div class="bg-white border border-gray-300 rounded-lg shadow-sm p-6">
+      {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }} {# Remove HTML validation #}
+
+            {{ form_row(form.title) }}
+            {{ form_row(form.content) }}
+
+            <div class="mt-6 flex justify-end">
+               {{ form_widget(form.save) }}
+            </div>
+
+      {{ form_end(form) }}
+   </div>
+</section>

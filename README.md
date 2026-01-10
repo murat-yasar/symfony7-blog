@@ -94,5 +94,14 @@ composer require symfony/validator
    - Create form logic: `php bin/console make:form`
    - Define New function to create a new post (PostController.php)
    - Define Route to New function (PostController.php)
-   - Define New twig ((templates/post/new.html.twig)
+   - Define New twig (templates/post/new.html.twig)
    - Set constraints to form fields with validator (src/Entitiy/Post.php)
+   - Create a success message for form submission (templates/base.html.twig)
+   - Define the message in PostController (src/Controller/PostController.php)
+
+### 6. Add Edit component
+   - Create a _form.html.twig component for common forms (new and edit, etc.)
+   - Remove the form from new.html.twig and refer the _form.html.twig, instead
+   - Create edit.html.twig
+   - Add an edit function (src/Controller/PostController.php)
+   - Add an edit button and reference the link (templates/post/show.html.twig)
