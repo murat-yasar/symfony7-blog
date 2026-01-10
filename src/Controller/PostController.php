@@ -56,7 +56,8 @@ final class PostController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted())
+        // If the form values are valid and the form is submitted
+        if ($form->isSubmitted() && $form->isValid())
         {
             $entityManager->persist($post);
             $entityManager->flush();

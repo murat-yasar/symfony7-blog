@@ -10,7 +10,7 @@
 
     <section class="m-5 max-w-2xl">
         <div class="bg-white border border-gray-300 rounded-lg shadow-sm p-6">
-            {{ form_start(form) }}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
                 {{ form_row(form.title) }}
                 {{ form_row(form.content) }}

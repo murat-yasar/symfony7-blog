@@ -37,6 +37,11 @@ composer require symfony/profiler-pack --dev
 composer require symfony/form
 `
 
+### 6. Install Symfony Validator (to validate data from forms)
+`shell
+composer require symfony/validator
+`
+
 
 
 
@@ -90,3 +95,4 @@ composer require symfony/form
    - Define New function to create a new post (PostController.php)
    - Define Route to New function (PostController.php)
    - Define New twig ((templates/post/new.html.twig)
+   - Set constraints to form fields with validator (src/Entitiy/Post.php)
